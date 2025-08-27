@@ -28,8 +28,9 @@ def run_analysis():
     try:
         # --- 1. Load the Data Automatically ---
         # The app now loads the data file directly from the repository.
-        # Ensure 'spicejet24 (1).xlsx - Monthly_Template.csv' is in your GitHub repo.
-        df = pd.read_csv('spicejet24 (1).xlsx - Monthly_Template.csv', skiprows=2)
+        # This filename has been updated as per your request.
+        file_name = 'spicejet24 (1).xlsx - Monthly_Template.csv.xlsx - Monthly_Template.csv'
+        df = pd.read_csv(file_name, skiprows=2)
         st.success("Dataset loaded successfully!")
 
         # --- 2. Data Cleaning and Preprocessing ---
@@ -101,7 +102,7 @@ def run_analysis():
         """)
 
     except FileNotFoundError:
-        st.error("Error: The data file 'spicejet24 (1).xlsx - Monthly_Template.csv' was not found.")
+        st.error(f"Error: The data file '{file_name}' was not found.")
         st.info("Please make sure the CSV file is in the same GitHub repository as the app.py file.")
     except Exception as e:
         st.error(f"An error occurred during the analysis: {e}")
